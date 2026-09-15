@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p scratch_src)",
+      "Bash(unzip -o -q ../project.sb3 -d .)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 build_3d.py)",
+      "Bash(python3 validate.py)",
+      "Bash(cp /home/rhode/Desktop/Rhodexa/goodbye/scratch_src/project.json /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/project_new.json)",
+      "Bash(python3 dump.py \"3D Matrix Camera View %s\")",
+      "Bash(python3 dump.py \"3D Apply Range %s %s\")",
+      "Bash(python3 dump.py \"3D Matrix Multiply %s %s %s\")",
+      "Bash(grep -v -E '\\\\.\\(png|json|wav|mp3|svg\\)$')",
+      "Bash(python3 dump.py \"3D Matrix Rotation Y %s %s\")",
+      "Bash(python3 dump.py \"3D Init\")",
+      "Bash(python3 dump.py \"3D Dev Draw Test Cube\")",
+      "Bash(python3 obj_to_scratch_lists.py /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/ship_shuffled.obj --scale 100 --reverse)",
+      "Bash(python3 obj_to_scratch_lists.py /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/hull_shuffled.obj --scale 100 --reverse)",
+      "Bash(python3 obj_to_scratch_lists.py /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/props.obj --scale 100 --sort-axis x)",
+      "Bash(python3 obj_to_scratch_lists.py /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/hull_shuffled.obj --scale 100)",
+      "Bash(python3 obj_to_scratch_lists.py /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/hull_shuffled.obj --scale 100 --sort-axis z --reverse)",
+      "Bash(python3 combine_ship_list.py ../ship/ship.obj ../ship/sprites.txt --scale 100)",
+      "Bash(python3 combine_ship_list.py ../ship/ship.obj /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/sprites_short.txt --scale 100)",
+      "Bash(unzip -p ../project.sb3 project.json)",
+      "Bash(cp /home/rhode/Desktop/Rhodexa/goodbye/scratch_src/project.json /tmp/claude-1000/-home-rhode-Desktop-Rhodexa-goodbye/7f3896db-f7f3-4833-bca7-e2911e310e9e/scratchpad/project.json)",
+      "Bash(python3 dump.py \"\\(test\\) drawWatership\")",
+      "Bash(python3 build_ship_load.py)",
+      "Bash(python3 dump.py \"Ship Load\")"
+    ]
+  }
+}
