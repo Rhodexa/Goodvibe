@@ -435,6 +435,68 @@ def goto_xy(x_expr, y_expr):
     return f
 
 
+# ---- looks / pen stamping -------------------------------------------------
+
+def _simple_stmt(opcode, fields=None, **input_exprs):
+    def f(ctx, parent):
+        bid = ctx.new_id()
+        inputs = {k: e(ctx, bid) for k, e in input_exprs.items()}
+        ctx.blocks[bid] = {
+            "opcode": opcode, "next": None, "parent": parent,
+            "inputs": inputs, "fields": fields or {},
+            "shadow": False, "topLevel": False,
+        }
+        return bid
+    return f
+
+
+def pen_stamp(): return _simple_stmt("pen_stamp")
+def looks_hide(): return _simple_stmt("looks_hide")
+def clear_graphic_effects(): return _simple_stmt("looks_cleargraphiceffects")
+def point_in_direction(dir_expr): return _simple_stmt("motion_pointindirection", DIRECTION=dir_expr)
+def set_size(size_expr): return _simple_stmt("looks_setsizeto", SIZE=size_expr)
+
+
+def set_effect(effect, value_expr):
+    """effect: "COLOR", "BRIGHTNESS", "GHOST", ..."""
+    return _simple_stmt("looks_seteffectto", {"EFFECT": [effect, None]}, VALUE=value_expr)
+
+
+def switch_costume(costume_expr):
+    """Costume by name (text("tri_1")) or by number (any number reporter).
+    A literal name goes in the costume menu shadow itself; a reporter covers
+    the shadow like dropping a block onto the menu in the editor."""
+    def f(ctx, parent):
+        bid = ctx.new_id()
+        menu_id = ctx.new_id()
+        value = costume_expr(ctx, bid)
+        literal = value[0] == 1 and isinstance(value[1], list)
+        ctx.blocks[menu_id] = {
+            "opcode": "looks_costume", "next": None, "parent": bid,
+            "inputs": {}, "fields": {"COSTUME": [value[1][1] if literal else "", None]},
+            "shadow": True, "topLevel": False,
+        }
+        ctx.blocks[bid] = {
+            "opcode": "looks_switchcostumeto", "next": None, "parent": parent,
+            "inputs": {"COSTUME": [1, menu_id] if literal else [3, value[1], menu_id]},
+            "fields": {}, "shadow": False, "topLevel": False,
+        }
+        return bid
+    return f
+
+
+def costume_number():
+    def f(ctx, parent):
+        bid = ctx.new_id()
+        ctx.blocks[bid] = {
+            "opcode": "looks_costumenumbername", "next": None, "parent": parent,
+            "inputs": {}, "fields": {"NUMBER_NAME": ["number", None]},
+            "shadow": False, "topLevel": False,
+        }
+        return [2, bid]
+    return f
+
+
 class Proc:
     """A custom block ("procedure") definition + call-site factory."""
 
