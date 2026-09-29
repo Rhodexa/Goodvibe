@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" fill="none">
+
+  <defs>
+    <!-- All softness is created through opacity gradients.
+         No filters / blur / masks. -->
+
+    <linearGradient id="outer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4FFFF" stop-opacity="0.10"></stop>
+      <stop offset="30%" stop-color="#E8FDFF" stop-opacity="0.07"></stop>
+      <stop offset="72%" stop-color="#D5FAFF" stop-opacity="0.025"></stop>
+      <stop offset="100%" stop-color="#C8F7FF" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FFFF" stop-opacity="0.18"></stop>
+      <stop offset="25%" stop-color="#E9FDFF" stop-opacity="0.13"></stop>
+      <stop offset="68%" stop-color="#D8FAFF" stop-opacity="0.04"></stop>
+      <stop offset="100%" stop-color="#CDF8FF" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <linearGradient id="core" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.19"></stop>
+      <stop offset="18%" stop-color="#F0FFFF" stop-opacity="0.13"></stop>
+      <stop offset="55%" stop-color="#E0FCFF" stop-opacity="0.035"></stop>
+      <stop offset="100%" stop-color="#D2FAFF" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <linearGradient id="ghost" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5FFFF" stop-opacity="0.11"></stop>
+      <stop offset="45%" stop-color="#E1FBFF" stop-opacity="0.045"></stop>
+      <stop offset="100%" stop-color="#D0F8FF" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+
+
+  <!-- ==========================================
+       LEFT BEAM
+       Three nested translucent silhouettes
+       ========================================== -->
+
+  <!-- feather -->
+  <path d="M18 0
+       C30 3 61 3 77 0
+       C75 100 79 235 84 360
+       L14 360
+       C18 225 20 100 18 0Z" fill="url(#outer)"></path>
+
+  <!-- body -->
+  <path d="M27 0
+       C38 3 57 3 69 0
+       C68 105 71 231 74 360
+       L25 360
+       C28 225 29 105 27 0Z" fill="url(#body)"></path>
+
+  <!-- core -->
+  <path d="M38 0
+       C44 2 53 2 59 0
+       C59 98 61 210 62 331
+       L39 331
+       C40 210 40 99 38 0Z" fill="url(#core)"></path>
+
+
+  <!-- ==========================================
+       SMALL CENTRAL BEAM
+       ========================================== -->
+
+  <path d="M165 0
+       C173 2 199 2 207 0
+       C205 90 209 207 211 320
+       L160 320
+       C164 203 166 88 165 0Z" fill="url(#outer)"></path>
+
+  <path d="M175 0
+       C181 2 193 2 199 0
+       C198 91 200 191 201 300
+       L173 300
+       C175 194 176 91 175 0Z" fill="url(#body)"></path>
+
+  <path d="M182 0
+       C185 1 190 1 193 0
+       C192 81 193 169 194 261
+       L182 261
+       C183 170 183 80 182 0Z" fill="url(#core)"></path>
+
+
+  <!-- ==========================================
+       GHOST BEAM
+       Close to central beam, intentionally weak
+       ========================================== -->
+
+  <path d="M213 0
+       C221 2 242 2 250 0
+       C249 74 251 163 253 267
+       L209 267
+       C212 166 214 75 213 0Z" fill="url(#outer)"></path>
+
+  <path d="M221 0
+       C227 2 239 2 243 0
+       C242 72 244 152 245 247
+       L218 247
+       C220 155 222 72 221 0Z" fill="url(#ghost)"></path>
+
+
+  <!-- ==========================================
+       RIGHT BEAM
+       Large gap before this one
+       ========================================== -->
+
+  <path d="M337 0
+       C351 3 389 3 404 0
+       C402 106 407 238 410 360
+       L331 360
+       C335 237 339 105 337 0Z" fill="url(#outer)"></path>
+
+  <path d="M347 0
+       C359 3 383 3 395 0
+       C394 105 397 233 399 360
+       L343 360
+       C346 230 349 104 347 0Z" fill="url(#body)"></path>
+
+  <path d="M359 0
+       C367 2 378 2 385 0
+       C384 102 386 208 387 326
+       L357 326
+       C359 210 360 102 359 0Z" fill="url(#core)"></path>
+
+
+  <!-- ==========================================
+       TINY EDGE SLIVER
+       ========================================== -->
+
+  <path d="M449 0
+       C454 2 463 2 467 0
+       C466 48 468 105 469 168
+       L446 168
+       C448 106 450 48 449 0Z" fill="url(#outer)"></path>
+
+  <path d="M454 0
+       C457 1 461 1 463 0
+       C462 47 463 96 464 151
+       L452 151
+       C453 97 454 47 454 0Z" fill="url(#body)"></path>
+
+</svg>
